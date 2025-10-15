@@ -1,7 +1,8 @@
 name: 09 - Uswing Functions
 
 on:
-    pull_requests:
+    pull_request:
+    workflow_dispatch:
 
 jobs:
     echo1:
