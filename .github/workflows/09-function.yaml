@@ -1,0 +1,23 @@
+name: 09 - Uswing Functions
+
+on:
+    pull_requests:
+
+jobs:
+    echo1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Failing step
+              run: exit 1
+            - name: I will beskipped
+              if: ${{success()}}
+              run: echo 'I will print if previous steps succeeded.'
+            - name: I will beskipped
+              if: ${{failure()}}
+              run: echo 'I will print if previous step fails.
+            - name: I will beskipped
+              if: ${{!cancelled()}}
+              run: echo 'I will always print, except when workflow is cancelled.
+            - name: I will beskipped
+              if: ${{cancelled()}}
+              run: echo 'I will print if workflow has cancelled.
