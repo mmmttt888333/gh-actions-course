@@ -1,7 +1,6 @@
 name: 09 - Uswing Functions
 
 on:
-    pull_request:
     workflow_dispatch:
 
 jobs:
@@ -18,14 +17,10 @@ jobs:
             - name: Bug step
               if: ${{!cancelled() && contains(github.event.pull_request.title, 'fix')}}
               run: echo 'I am a bug fix'
-            - name: sleep 20sec
-              run: sleep 20
-            - name: Failing step
-              run: exit 1
-            - name: I will beskipped
+            - name: I will EXECUTE
               if: ${{success()}}
               run: echo 'I will print if previous steps succeeded.'
-            - name: I will execute
+            - name: I will be skipped
               if: ${{failure()}}
               run: echo 'I will print if previous step fails.
             - name: I will execute
