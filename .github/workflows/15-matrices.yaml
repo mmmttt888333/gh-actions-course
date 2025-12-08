@@ -44,4 +44,4 @@ jobs:
                 size: [small, large]
             include:
                 - color: red
-                - shape: triangle
+                  shape: triangle
